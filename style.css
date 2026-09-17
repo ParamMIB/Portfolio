@@ -1,0 +1,340 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: #161b22;
+    border-bottom: 2px solid #58a6ff;
+}
+
+.logo {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #58a6ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    color: #c9d1d9;
+    border: 1px solid rgba(88, 166, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #58a6ff;
+    color: #ffffff;
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    min-height: 60vh;
+}
+
+.page-view {
+    display: none;
+}
+
+.page-view.active {
+    display: block;
+}
+
+/* 67% Left / 33% Right Layout Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left Column Layout Container */
+.main-intro-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 📌 Unique Pinterest-style Overlapping Intro Layout */
+.profile-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #161b22;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-left: 120px; /* Shifits the full text card rightwards */
+}
+
+/* Big Asymmetric Rectangular Photo Frame popping off the card */
+.profile-photo-box {
+    width: 260px;
+    height: 360px;
+    background-color: #21262d;
+    border: 2px solid #58a6ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b949e;
+    flex-shrink: 0;
+    position: absolute;
+    left: -120px; /* Pulls the frame far outwards over the left border edge */
+    z-index: 10;   /* Keeps the photo box hovering smoothly on top */
+    box-shadow: -8px 12px 30px rgba(0, 0, 0, 0.6);
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-text {
+    margin-left: 170px; /* Gives nice breathing room next to the photo frame */
+}
+
+
+.profile-text h2 {
+    color: #58a6ff;
+    margin-top: 0;
+}
+
+/* 💭 Life Rule / Philosophy Banner Box */
+/* 📌 Clean embedded styling for your personal quote layout */
+.motto-embedded {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(88, 166, 255, 0.2); /* Creates a subtle dividing line */
+    text-align: center;
+}
+
+.motto-text {
+    font-style: italic;
+    font-weight: 700;
+    color: #58a6ff; 
+    font-size: 1.4rem; /* Kept large and punchy to make a statement */
+    margin: 0;
+}
+
+.motto-author {
+    display: block;
+    font-size: 0.85rem;
+    color: #8b949e; /* Muted gray text color so the focus stays on the actual quote */
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+
+.motto-text {
+    font-style: italic;
+    color: #8b949e;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.motto-author {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #58a6ff;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Sidebar and Sub-tab Buttons Group */
+.widgets-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #161b22;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(88, 166, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.widgets-sidebar h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #58a6ff;
+}
+
+.sub-widget-btn {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid rgba(88, 166, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sub-widget-btn:hover {
+    border-color: #58a6ff;
+    background-color: rgba(88, 166, 255, 0.05);
+}
+
+.sub-widget-btn.active {
+    background-color: rgba(88, 166, 255, 0.15);
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+/* Sub-Widget Content Panel Display */
+/* Hidden by default, turns visible only when a sub-content panel becomes active */
+.widget-display-panel {
+    background-color: #0d1117;
+    padding: 0px; /* Starts flat with no padding */
+    border-radius: 8px;
+    border: 1px solid transparent;
+    min-height: 0px; /* Collapses flat initially */
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Opens up smoothly with borders and padding when an inside block is active */
+.widget-display-panel.open {
+    padding: 20px;
+    border-color: rgba(88, 166, 255, 0.1);
+    min-height: 140px;
+}
+
+
+.sub-content {
+    display: none;
+}
+
+.sub-content.active {
+    display: block;
+}
+
+/* 🎨 Vibrant Energy Tags Configuration */
+.energy-tags, .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #21262d;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    color: #c9d1d9;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Bright specific look for the personality vertical */
+.energy-tags .tag {
+    border-color: #58a6ff;
+    background-color: rgba(88, 166, 255, 0.05);
+}
+
+.widget-list {
+    padding-left: 18px;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.widget-list li {
+    margin-bottom: 8px;
+}
+
+/* Structural Components */
+.blog-card, .cv-card, .contact-card {
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.blog-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #58a6ff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+}
+
+.contact-list a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #8b949e;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(88, 166, 255, 0.1);
+    margin-top: 40px;
+}
+
+@media (max-width: 950px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-container {
+        margin-left: 0;
+        flex-direction: column;
+        padding-top: 140px;
+    }
+    .profile-photo-box {
+        position: relative;
+        left: 0;
+        top: -20px;
+        margin: auto;
+    }
+    .profile-text {
+        margin-left: 0;
+        text-align: center;
+    }
+}
