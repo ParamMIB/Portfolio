@@ -76,48 +76,54 @@ main {
 }
 
 /* 📌 Unique Pinterest-style Overlapping Intro Layout */
+/* 1. Main Background Card: Shifted right to leave perfect breathing space for the photo overlap */
 .profile-container {
-    display: flex;
-    gap: 40px;
-    align-items: center;
+    position: relative;
     background-color: #161b22;
     padding: 40px;
     border-radius: 16px;
     border: 1px solid rgba(88, 166, 255, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    margin-left: 120px; /* Shifits the full text card rightwards */
-}
-
-/* Big Asymmetric Rectangular Photo Frame popping off the card */
-.profile-photo-box {
-    width: 260px;
-    height: 360px;
-    background-color: #21262d;
-    border: 2px solid #58a6ff;
-    border-radius: 12px;
+    min-height: 340px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #8b949e;
-    flex-shrink: 0;
-    position: absolute;
-    left: -120px; /* Pulls the frame far outwards over the left border edge */
-    z-index: 10;   /* Keeps the photo box hovering smoothly on top */
-    box-shadow: -8px 12px 30px rgba(0, 0, 0, 0.6);
-    background-size: cover;
-    background-position: center;
+    margin-left: 140px; /* Pulls the card inward to clear the far left margin */
 }
 
+/* 2. Overlapping Photo Box: Scaled and anchored precisely to match the card baseline vertically */
+/* 📌 1. Significantly enlarged photo size properties */
+.profile-photo-box {
+    width: 300px;        /* Increased from 260px to make it noticeably wider */
+    height: 420px;       /* Increased from 360px to extend down as a massive visual anchor */
+    background-image: url('profile-pic.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #58a6ff;
+    border-radius: 14px;
+    
+    position: absolute;
+    left: -160px;        /* Pulled even further left to create a bold, dramatic overlap */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: -8px 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* 📌 2. Increased inner margin to give text safety breathing room next to the larger photo */
 .profile-text {
-    margin-left: 170px; /* Gives nice breathing room next to the photo frame */
+    width: 100%;
+    margin-left: 180px;  /* Increased from 160px so text paragraphs don't clip under the photo */
+    display: flex;
+    flex-direction: column;
 }
 
 
 .profile-text h2 {
     color: #58a6ff;
     margin-top: 0;
+    margin-bottom: 15px;
 }
+
 
 /* 💭 Life Rule / Philosophy Banner Box */
 /* 📌 Clean embedded styling for your personal quote layout */
@@ -336,5 +342,137 @@ footer {
     .profile-text {
         margin-left: 0;
         text-align: center;
+    }
+}
+/* Custom 3D Glowing "P" Favicon Placeholder for Local Presentation */
+.logo-icon-p {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #161b22, #0d1117);
+    border: 2px solid #58a6ff;
+    border-radius: 8px;
+    color: #58a6ff;
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-shadow: 0 0 12px rgba(88, 166, 255, 0.4), inset 0 0 6px rgba(88, 166, 255, 0.2);
+    text-shadow: 0 0 6px rgba(88, 166, 255, 0.6);
+    margin-right: 10px;
+    transform: perspective(100px) translateZ(2px);
+}
+
+/* 2-Column layout structure for the blog article */
+.blog-layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Text takes 67%, the vertical image takes 33% */
+    gap: 30px;
+    align-items: start;
+    margin-top: 15px;
+}
+
+/* Adjust line spacing inside the text column to make it match the image height nicely */
+.blog-text-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: justify; /* Cleans up the paragraph edges perfectly */
+}
+
+/* Tall, custom vertical frame matching your website accent details */
+.blog-photo-frame {
+    width: 100%;
+    height: 400px; /* Gives you a stable, majestic vertical aspect ratio */
+    background-image: url('blog-pic.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Dynamic responsive stack behavior for mobile viewports */
+/* ==========================================================================
+   📌 BLOGS TAB: Premium Asymmetric Magazine Layout (Runs on Desktop)
+   ========================================================================== */
+
+/* Base grid setup to handle the asymmetrical layout distribution */
+.blog-layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Text takes 67% left side, room for photo on the right 33% */
+    gap: 40px;
+    align-items: start;
+    margin-top: 15px;
+}
+
+/* Giving the text block nice safety space so it doesn't touch the photo */
+.blog-text-content {
+    margin-right: 40px; 
+}
+
+.blog-text-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Upgraded structural logic to make the blog photo pop out, scale bigger, and shift upward */
+/* Upgraded blog photo frame rules for a much larger, better-aligned presence */
+/* Final maximized and right-shifted blog photo frame dimensions */
+.blog-photo-frame {
+    width: 380px;       /* Increased from 340px to make it significantly wider */
+    height: 560px;      /* Increased from 520px to make it noticeably taller */
+    background-image: url('blog-pic.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #58a6ff;
+    border-radius: 14px;
+    box-shadow: 8px 12px 30px rgba(0, 0, 0, 0.5);
+    
+    position: absolute;
+    right: -60px;       /* 👈 Shifted further right (from -20px) to pop deeper off the card edge */
+    top: 40px;          
+    z-index: 10;        
+}
+
+
+
+/* Ensure the main blog card wrapper holds correct relative layout coordinates */
+.blog-card {
+    position: relative; /* Keeps the floating absolute photo bound specifically to this section */
+    background-color: #161b22;
+    padding: 30px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    margin-right: 40px; /* Adds space inside your main window tracking borders */
+}
+
+/* ==========================================================================
+   📱 Mobile View Responsive Behavior (Stacks elements neatly on phones)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .blog-layout-grid {
+        grid-template-columns: 1fr; /* Stacks text and image vertically on small viewports */
+        gap: 20px;
+    }
+    .blog-text-content {
+        margin-right: 0;
+    }
+    .blog-photo-frame {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 350px;
+        margin-top: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .blog-card {
+        margin-right: 0;
     }
 }

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Param Agarwal | E-Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
     <!-- Professional Navigation Bar -->
     <header>
-        <h1 class="logo">👤 My E-Portfolio</h1>
+        <h1 class="logo"><span class="logo-icon-p">P</span>👤 My E-Portfolio</h1>
         <nav class="nav-links">
             <button class="nav-btn active" data-target="home">Home</button>
             <button class="nav-btn" data-target="blog">Blogs</button>
@@ -32,24 +33,27 @@
                     
                     <!-- Asymmetric Overlapping Profile Container -->
                     <!-- Asymmetric Overlapping Profile Container containing everything cleanly -->
-                <div class="profile-container">
-                    <!-- Tall portrait configuration for your photo -->
-                    <div class="profile-photo-box">
-                        <span>[ Photo Space ]</span>
-                    </div>
-                    
-                    <div class="profile-text">
-                        <h2>Welcome to my E-Portfolio</h2>
-                        <p>I am Param Agarwal, a dynamic undergraduate student beginning my journey at <strong>IIT Roorkee in ECE Department</strong>. Driven by curiosity and a commitment to personal growth, this portfolio serves as a reflection of my background, experiences, technical skills, and achievements.</p>
-                        <p>Explore the tabs above to read about my initial experiences on campus, access my formal resume, or find my contact channels.</p>
+                    <!-- Unified Container Card -->
+                    <div class="profile-container">
                         
-                        <!-- 💭 Re-anchored, clean, unboxed personal mantra statement -->
-                        <div class="motto-embedded">
-                            <p class="motto-text">"Just Do what Excites!"</p>
-                            <span class="motto-author">— My Life Rule</span>
+                        <!-- The Photo frame resides perfectly balanced on the left -->
+                        <div class="profile-photo-box"></div>
+                        
+                        <!-- The Text block stays perfectly padded on the right -->
+                        <div class="profile-text">
+                            <h2>Welcome to my E-Portfolio</h2>
+                            <p>I am Param Agarwal, a dynamic undergraduate student beginning my journey at <strong>IIT Roorkee in ECE Department</strong>. Driven by curiosity and a commitment to personal growth, this portfolio serves as a reflection of my background, experiences, technical skills, and achievements.</p>
+                            <p>Explore the tabs above to read about my initial experiences on campus, access my formal resume, or find my contact channels.</p>
+                            
+                            <!-- Clean, center-aligned embedded personal mantra statement -->
+                            <div class="motto-embedded">
+                                <p class="motto-text">"Just Do what Excites!"</p>
+                                <span class="motto-author">— My Life Rule</span>
+                            </div>
                         </div>
+                        
                     </div>
-                </div>
+
 
 
                 </div>
@@ -137,18 +141,32 @@
 
 
         <!-- CAMPUS LOGS VIEW (YOUR PARAM CUSTOM TEXT PRESERVED 100%) -->
+        <!-- CAMPUS LOGS VIEW -->
         <section id="blog" class="page-view">
             <h2>📌 Campus Log: Day One at IIT ROORKEE</h2>
             <article class="blog-card">
                 <h3>A New Chapter: First Impressions of Campus Life</h3>
+                <p class="date">September 17, 2026</p>
                 
-                <p>My first day as a student at IIT Roorkee felt like stepping into an ecosystem already alive with energy. Touring the entire campus for the very first time with my parents was truly a memorable experience. Exploring the vibrant greenery, the historical age old architecture and up to date modern technologies truly filled me up with pride. I remember being astonished by the Param Ganga Supercomputer and the new maths and humanities building.</p>
-                
-                <p>Beneath the Thomason Arches, every conversation carried a spark: ideas about the future, late-night chats with hostel roommates, and the collective ambition to build things that matter.</p>
-                
-                <p>The campus made the future feel tangible. Between finding my way through unfamiliar corridors and meeting classmates from completely different backgrounds, I realized that college is more than a technical discipline. It is a space for learning to listen closely to the world, then shape what comes next. I truly didn't expect to make these many new friends so quickly. The discussions regarding our dream trips and how we all wanted to live the hostel campus life to the fullest had already started.</p>
+                <!-- New two-column layout framework wrapping text and photo side-by-side -->
+                <div class="blog-layout-grid">
+                    
+                    <!-- Left side text column -->
+                    <div class="blog-text-content">
+                        <p>My first day as a student at IIT Roorkee felt like stepping into an ecosystem already alive with energy. Touring the entire campus for the very first time with my parents was truly a memorable experience. Exploring the vibrant greenery, the historical age old architecture and up to date modern technologies truly filled me up with pride. I remember being astonished by the Param Ganga Supercomputer and the new maths and humanities building.</p>
+                        
+                        <p>Beneath the Thomason Arches, every conversation carried a spark: ideas about the future, late-night chats with hostel roommates, and the collective ambition to build things that matter.</p>
+                        
+                        <p>The campus made the future feel tangible. Between finding my way through unfamiliar corridors and meeting classmates from completely different backgrounds, I realized that college is more than a technical discipline. It is a space for learning to listen closely to the world, then shape what comes next. I truly didn't expect to make these many new friends so quickly. The discussions regarding our dream trips and how we all wanted to live the hostel campus life to the fullest had already started.</p>
+                    </div>
+
+                    <!-- Right side vertical picture frame anchor -->
+                    <div class="blog-photo-frame"></div>
+                    
+                </div>
             </article>
         </section>
+
 
         <!-- CV VIEW -->
         <section id="cv-section" class="page-view">
