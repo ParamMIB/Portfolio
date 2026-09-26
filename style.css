@@ -685,3 +685,96 @@ footer {
     color: #8b949e;
     font-size: 0.95rem;
 }
+
+/* ==========================================================================
+   📱 Mobile View Responsiveness Overhaul (Add to the very bottom of style.css)
+   ========================================================================== */
+@media (max-width: 900px) {
+    
+    /* 1. Unstick the navigation bar layout and stack elements vertically on phones */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        position: relative; /* Fixes the issue of the home picture overlapping the top bar */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* 2. Reposition the Home Page Layout Grid */
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Drop 2-column layout to single column stack */
+        gap: 25px;
+    }
+
+    .main-intro-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 3. Drop absolute floating positions on mobile so the photo moves below the header */
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0 !important;
+        padding: 20px;
+        padding-top: 360px; /* Leave empty room on top for your large portrait frame block */
+        position: relative;
+    }
+
+    .profile-photo-box {
+        position: absolute !important;
+        left: 50% !important;
+        top: 20px !important;
+        transform: translateX(-50%) !important; /* Horizontally centers your face photo card */
+        width: 240px;
+        height: 320px;
+        margin: 0 auto;
+    }
+
+    .profile-text {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    .motto-embedded {
+        text-align: center;
+    }
+
+    /* 4. CV Data Table Mobile Swipe Override */
+    .cv-table-responsive {
+        width: 100%;
+        overflow-x: auto; /* Forces a horizontal swipe bar if column data overflows phone width */
+        -webkit-overflow-scrolling: touch;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .cv-web-table {
+        min-width: 550px; /* Guarantees your column text lines don't get squished or broken upward */
+    }
+
+    /* 5. Fix the Blog tab photo placement stack formatting rules */
+    .blog-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .blog-text-content {
+        margin-right: 0 !important;
+    }
+
+    .blog-photo-frame {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        width: 100%;
+        height: 340px;
+        margin-top: 15px;
+    }
+}
