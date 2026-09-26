@@ -778,3 +778,76 @@ footer {
         margin-top: 15px;
     }
 }
+
+/* ==========================================================================
+   ⚡ INTERACTIVE BACKGROUND: Glowing Electric Spark Canvas
+   ========================================================================== */
+#spark-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;          /* Locks the canvas behind all text cards and nav buttons */
+    pointer-events: none; /* Allows user clicks to pass straight through to buttons */
+    background-color: transparent;
+}
+
+/* ==========================================================================
+   🎬 PREMIUM REVEAL: Seamless High-Contrast Linear "Fog Clearing" Reveal 
+   ========================================================================== */
+
+.page-view.active, .sub-content.active {
+    display: block !important;
+    
+    /* 📌 Optimized mask gradient with an extended clear buffer space at the top */
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 50%, 
+        rgba(0,0,0,0) 80%, 
+        rgba(0,0,0,0) 100%
+    );
+    mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 50%, 
+        rgba(0,0,0,0) 80%, 
+        rgba(0,0,0,0) 100%
+    );
+    
+    /* 📌 Scaled up to 300% height to ensure the fading gradient edge sweeps completely past the card bounds */
+    -webkit-mask-size: 100% 300%;
+    mask-size: 100% 300%;
+    
+    /* Starts completely hidden at the base */
+    -webkit-mask-position: 0 100%;
+    mask-position: 0 100%;
+    
+    /* Kept at a steady linear pace over 2.6 seconds */
+    animation: hardwareFogReveal 2.6s linear forwards !important;
+}
+
+@keyframes hardwareFogReveal {
+    0% {
+        -webkit-mask-position: 0 100%;
+        mask-position: 0 100%;
+        opacity: 0; 
+    }
+    8% {
+        opacity: 1; /* Quick, seamless fade-in of the boundary card boxes */
+    }
+    99% {
+        /* 📌 Slides the mask fully past the contents (0% position) BEFORE removing the asset layer */
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+        opacity: 1;
+    }
+    100% {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+        opacity: 1;
+        
+        /* Safely drops mask rendering after the fade transition has safely completed */
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}
